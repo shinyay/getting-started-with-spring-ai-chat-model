@@ -1,4 +1,5 @@
-# Title
+# Getting Started with Spring AI - Chat Model API
+The Chat Model API offers developers the ability to integrate AI-powered chat completion capabilities into their applications.
 
 ## Description
 
