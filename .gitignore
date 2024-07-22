@@ -1,4 +1,9 @@
 HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -13,6 +18,7 @@ build/
 .settings
 .springBeans
 .sts4-cache
+
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
@@ -22,6 +28,7 @@ bin/
 *.iws
 *.iml
 *.ipr
+
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
@@ -32,6 +39,9 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
