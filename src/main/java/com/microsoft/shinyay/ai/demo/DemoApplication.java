@@ -1,4 +1,4 @@
-package com.microsoft.shinyay.ai.demo.demo;
+package com.microsoft.shinyay.ai.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
