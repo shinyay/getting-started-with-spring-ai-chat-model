@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Chat Interface</title>
+</head>
+
+<body>
+    <h1>Chat with AI</h1>
+    <form action="#" th:action="@{/chat}" th:object="${chatMessage}" method="post">
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" th:field="*{message}" />
+        <button type="submit">Send</button>
+    </form>
+    <div>
+        <h2>Response:</h2>
+        <p th:text="${response}"></p>
+    </div>
+</body>
+
+</html>
