@@ -1,18 +1,33 @@
 package com.microsoft.shinyay.ai.demo.controller;
 
 import com.microsoft.shinyay.ai.demo.service.ChatService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import com.microsoft.shinyay.ai.demo.model.ChatMessage;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
-@RequestMapping("/api/chat")
+@Controller
 public class ChatController {
 
-    @Autowired
-    private ChatService chatService;
+    private final ChatService chatService;
 
-    @PostMapping
-    public String chat(@RequestBody String message) {
-        return chatService.getChatResponse(message);
+    // Constructor injection
+    public ChatController(ChatService chatService) {
+        this.chatService = chatService;
+    }
+
+    @GetMapping("/chat")
+    public String showChatForm(Model model) {
+        model.addAttribute("chatMessage", new ChatMessage());
+        return "chat";
+    }
+
+    @PostMapping("/chat")
+    public String getChatResponse(@RequestParam("message") String message, Model model) {
+        String response = chatService.getChatResponse(message);
+        model.addAttribute("response", response);
+        return "chat";
     }
 }
