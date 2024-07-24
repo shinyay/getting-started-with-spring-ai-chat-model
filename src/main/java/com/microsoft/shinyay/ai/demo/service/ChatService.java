@@ -18,6 +18,8 @@ public class ChatService {
         // Azure OpenAI API へのリクエストを構築し、レスポンスを取得するロジックを実装
         String url = config.getEndpoint();
         // API リクエストの詳細は省略
-        return "Response from Azure OpenAI";
+        String response = "Response from Azure OpenAI";
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        return response + " (Received at: " + timestamp + ")";
     }
 }
