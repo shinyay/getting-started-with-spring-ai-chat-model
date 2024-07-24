@@ -1,4 +1,4 @@
-package com.microsoft.shinyay.ai.demo.demo;
+package com.microsoft.shinyay.ai.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
